@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python
 
 class SantaTrip(object):
     def __init__(self):
