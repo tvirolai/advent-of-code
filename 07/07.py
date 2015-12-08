@@ -1,4 +1,5 @@
 class BitwiseLogic(object):
+
     def __init__(self):
         with open('input.txt', 'r') as f:
             self.data = [x for x in f.read().split("\n") if len(x) > 5]
