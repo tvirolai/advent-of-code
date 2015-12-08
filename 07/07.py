@@ -4,7 +4,7 @@ class BitwiseLogic(object):
             self.data = [x for x in f.read().split("\n") if len(x) > 5]
         self.wires = {}
 
-    def processLine(self, line):
+    def processLine(self, line, b=0):
         wire = line.split(" -> ")[1]
         if len(line.split(" ")) == 3:
             operand = line.split(" -> ")[0]
@@ -41,12 +41,17 @@ class BitwiseLogic(object):
             op1 = line.split(" -> ")[0].split(" ")[1]
             if (op1 in self.wires):
                 self.wires[wire] = ~ self.wires[op1] & 0xffff
+        if b > 0:
+            self.wires["b"] = b
 
-    def loop(self):
+    def loop(self, b):
         while "a" not in self.wires:
             for line in self.data:
-                self.processLine(line)
-        print(self.wires["a"])
+                self.processLine(line, b)
+        return self.wires["a"]
 
 bl = BitwiseLogic()
-bl.loop()
+part1 = bl.loop(0)
+print(part1)
+bl2 = BitwiseLogic()
+print(bl2.loop(part1))
