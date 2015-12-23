@@ -5,21 +5,21 @@
 var fs = require('fs');
 var _ = require('underscore');
 
+var auntData = {
+  'children': 3,
+  'cats': 7,
+  'samoyeds': 2,
+  'pomeranians': 3,
+  'akitas': 0,
+  'vizslas': 0,
+  'goldfish': 5,
+  'trees': 3,
+  'cars': 2,
+  'perfumes': 1
+};
+
 fs.readFile('input.txt', 'utf-8', function (err, data) {
   var aunts = [];
-  var auntData = {
-    'children': 3,
-    'cats': 7,
-    'samoyeds': 2,
-    'pomeranians': 3,
-    'akitas': 0,
-    'vizslas': 0,
-    'goldfish': 5,
-    'trees': 3,
-    'cars': 2,
-    'perfumes': 1
-  };
-
   data = _.filter(data.split('\n'), function (num) { return num.length > 2; });
   data.forEach(function (d) {
     var aunt = {};
@@ -32,11 +32,11 @@ fs.readFile('input.txt', 'utf-8', function (err, data) {
     });
     aunts.push(aunt);
   });
-  part1(aunts, auntData);
-  part2(aunts, auntData);
+  part1(aunts);
+  part2(aunts);
 });
 
-function part1(auntList, auntData) {
+function part1(auntList) {
   auntList.forEach(function (aunt) {
     var name = aunt.Sue;
     var count = 0;
@@ -51,7 +51,7 @@ function part1(auntList, auntData) {
   });
 }
 
-function part2(auntList, auntData) {
+function part2(auntList) {
   auntList.forEach(function (aunt) {
     var count = 0;
     for (var key in aunt) {
