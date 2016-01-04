@@ -2,11 +2,11 @@
 
 "use strict";
 
-var fs = require("fs");
-var _ = require("underscore");
+const fs = require("fs");
+const _ = require("underscore");
 
-fs.readFile("input.txt", "utf-8", function (err, data) {
-  var list = _.filter(data.split("\n"), function (d) { return d.length > 0; });
+fs.readFile("input.txt", "utf-8", (err, data) => {
+  const list = _.filter(data.split("\n"), (d) => d.length > 0);
   console.log("Part 1: " + calculateResult(list, lineLength, lineLengthInChars));
   console.log("Part 2: " + calculateResult(list, encodedLineLength, lineLength));
 });
@@ -24,5 +24,5 @@ function encodedLineLength(line) {
 }
 
 function calculateResult(list, firstLength, secondLength) {
-  return _.reduce(list, function (memo, d) { return memo + (firstLength(d) - secondLength(d)); }, 0);
+  return _.reduce(list, (memo, d) => memo + (firstLength(d) - secondLength(d)), 0);
 }

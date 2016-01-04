@@ -1,11 +1,11 @@
 /* jshint node: true */
 "use strict";
 
-var fs = require("fs");
-var _ = require("underscore");
+const fs = require("fs");
+const _ = require("underscore");
 
-fs.readFile("input.txt", "utf-8", function (err, data) {
-  console.log(_.reduce(data.split("\n"), function (memo, d) { return (isNice(d)) ? memo + 1 : memo + 0; }, 0));
+fs.readFile("input.txt", "utf-8", (err, data) => {
+  console.log(_.reduce(data.split("\n"), (memo, d) => (isNice(d)) ? memo + 1 : memo + 0, 0));
 });
 
 function isNice(string) {
@@ -19,9 +19,9 @@ function isNice(string) {
 }
 
 function inputContains(string, array, limit) {
-  return limit <= _.reduce(array, function (memo, datum) { return memo + string.split(datum).length -1; }, 0);
+  return limit <= _.reduce(array, (memo, datum) => memo + string.split(datum).length -1, 0);
 }
 
 function hasDoubleLetters(string) {
-  return _.contains(_.map(string.split(""), function (d, i) { return d === string.split("")[i-1]; }), true);
+  return _.contains(_.map(string.split(""), (d, i) => d === string.split("")[i-1]), true);
 }
