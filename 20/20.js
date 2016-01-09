@@ -3,30 +3,35 @@
 "use strict";
 
 const _ = require("underscore");
-
 const limit = 33100000;
 
-console.log("Part 1: " + part1());
+console.log("Part 1: " + calculateResult(1));
+console.log("Part 2: " + calculateResult(2));
 
-function part1() {
+function calculateResult(part) {
   let maxNoOfPresents = 0;
   let house = 1;
   let presents = 0;
 
   while (maxNoOfPresents < limit) {
-    presents = presentsPerHouse(house);
+    presents = (part === 1) ? presentsPerHouse1(house) : presentsPerHouse2(house);
     if (presents > maxNoOfPresents) { 
       maxNoOfPresents = presents;
     }
-    if (maxNoOfPresents >= limit) { 
+    if (maxNoOfPresents >= limit) {
       return house;
     }
     ++house;
   }
 }
 
-function presentsPerHouse(houseNumber) {
+function presentsPerHouse1(houseNumber) {
   return _.reduce(factors(houseNumber), (memo, num) => memo + num * 10, 0);
+}
+
+function presentsPerHouse2(houseNumber) {
+  const filteredFactors = _.filter(factors(houseNumber), factor => houseNumber / 50 <= factor);
+  return _.reduce(filteredFactors, (memo, num) => memo + num * 11, 0);
 }
 
 function factors(number) {
