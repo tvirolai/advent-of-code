@@ -9,16 +9,12 @@ console.log("Part 1: " + calculateResult(1));
 console.log("Part 2: " + calculateResult(2));
 
 function calculateResult(part) {
-  let maxNoOfPresents = 0;
   let house = 1;
   let presents = 0;
 
-  while (maxNoOfPresents < limit) {
+  while (true) {
     presents = (part === 1) ? presentsPerHouse1(house) : presentsPerHouse2(house);
-    if (presents > maxNoOfPresents) { 
-      maxNoOfPresents = presents;
-    }
-    if (maxNoOfPresents >= limit) {
+    if (presents >= limit) {
       return house;
     }
     ++house;
