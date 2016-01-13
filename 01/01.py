@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 
-
-def accumulate(values, total=0):
-    return (x + sum(values[:i]) for i, x in enumerate(values))
-
 with open("input.txt", "r") as f:
     data = map(lambda x: 1 if x == "(" else -1, list(f.read()))
 
-print("Part 1: {0}".format(sum(data)))
-print("Part 2: {0}".format(list(accumulate(data)).index(-1) + 1))
+p1, p2 = sum(data), list(1 + x + sum(data[:i]) for i, x in enumerate(data)).index(-1)
+print("Part 1: {0}\nPart 2: {1}".format(p1, p2))
