@@ -1,29 +1,7 @@
 #!/usr/bin/env python
 
-class FloorPuzzle(object):
-    def __init__(self):
-        self.floor = 0
-        with open("input.txt", "r") as f:
-            self.data = list(f.read())
+with open("input.txt", "r") as f:
+    data = map(lambda x: 1 if x == "(" else -1, list(f.read()))
 
-    def lastFloor(self):
-        for char in self.data:
-            if (char == "("):
-                self.floor += 1
-            elif (char == ")"):
-                self.floor -= 1
-        print(self.floor)
-
-    def firstToEnterBottomFloor(self):
-        for i, char in enumerate(self.data):
-            if (char == "("):
-                self.floor += 1
-            elif (char == ")"):
-                self.floor -= 1
-            if self.floor == -1:
-                print(i + 1)
-                break
-
-if __name__ == "__main__":
-    floorPuzzle = FloorPuzzle()
-    floorPuzzle.firstToEnterBottomFloor()
+p1, p2 = sum(data), list(1 + x + sum(data[:i]) for i, x in enumerate(data)).index(-1)
+print("Part 1: {0}\nPart 2: {1}".format(p1, p2))
