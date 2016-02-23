@@ -1,9 +1,9 @@
 public class AOC15 {
 	public static void main(String[] args) {
-		Ingredient sprinkles = new Ingredient("Sprinkles", 5, -1, 0, 0, 5);
-		Ingredient peanutbutter = new Ingredient("Peanut butter", -1, 3, 0, 0, 1);
-		Ingredient frosting = new Ingredient("Frosting", 0, -1, 4, 0, 6);
-		Ingredient sugar = new Ingredient("Sugar", -1, 0, 0, 2, 8);
+		Ingredient sprinkles = new Ingredient(5, -1, 0, 0, 5);
+		Ingredient peanutbutter = new Ingredient(-1, 3, 0, 0, 1);
+		Ingredient frosting = new Ingredient(0, -1, 4, 0, 6);
+		Ingredient sugar = new Ingredient(-1, 0, 0, 2, 8);
 
 		int part1 = 0;
 		int part2 = 0;

@@ -1,13 +1,11 @@
 public class Ingredient {
-	private String name;
 	private int capacity;
 	private int durability;
 	private int flavor;
 	private int texture;
 	private int calories;
 
-	public Ingredient(String name, int capacity, int durability, int flavor, int texture, int calories) {
-		this.name = name;
+	public Ingredient(int capacity, int durability, int flavor, int texture, int calories) {
 		this.capacity = capacity;
 		this.durability = durability;
 		this.flavor = flavor;
@@ -33,9 +31,5 @@ public class Ingredient {
 
 	public int getCalories(int amount) {
 		return this.calories * amount;
-	}
-
-	public String getName() {
-		return this.name;
 	}
 }
