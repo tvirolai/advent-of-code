@@ -37,14 +37,12 @@ public class AOC14 {
         String winningName = "";
 
         for (int i = 0; i < 2503; i++) {
-            for (Reindeer beast : reindeer) {
-                beast.moveOne();
-            }
 
             winningDistance = 0;
             winningName = "";
 
             for (Reindeer beast : reindeer) {
+                beast.moveOne();
                 if (beast.returnDistance() > winningDistance) {
                     winningDistance = beast.returnDistance();
                     winningName = beast.getName();                    
@@ -59,6 +57,7 @@ public class AOC14 {
         }
 
         int winningPoints = 0;
+        
         for (Reindeer beast : reindeer) {
             if (beast.getPoints() > winningPoints) {
                 winningPoints = beast.getPoints();

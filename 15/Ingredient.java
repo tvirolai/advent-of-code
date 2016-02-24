@@ -1,4 +1,5 @@
 public class Ingredient {
+	
 	private int capacity;
 	private int durability;
 	private int flavor;

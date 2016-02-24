@@ -1,5 +1,7 @@
 public class AOC15 {
+
 	public static void main(String[] args) {
+
 		Ingredient sprinkles = new Ingredient(5, -1, 0, 0, 5);
 		Ingredient peanutbutter = new Ingredient(-1, 3, 0, 0, 1);
 		Ingredient frosting = new Ingredient(0, -1, 4, 0, 6);
@@ -29,7 +31,6 @@ public class AOC15 {
 					if (total > part1) {
 						part1 = total;
 					}
-					
 				}
 			}
 		}
