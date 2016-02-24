@@ -1,10 +1,10 @@
 public class Ingredient {
 	
-	private int capacity;
-	private int durability;
-	private int flavor;
-	private int texture;
-	private int calories;
+	private final int capacity;
+	private final int durability;
+	private final int flavor;
+	private final int texture;
+	private final int calories;
 
 	public Ingredient(int capacity, int durability, int flavor, int texture, int calories) {
 		this.capacity = capacity;

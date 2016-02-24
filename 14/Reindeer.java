@@ -1,9 +1,9 @@
 public class Reindeer {
   
-    private String name;
-    private int speed;
-    private int flightTime;
-    private int restTime;
+    private final String name;
+    private final int speed;
+    private final int flightTime;
+    private final int restTime;
 
     private int time;
     private int points;
