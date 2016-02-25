@@ -6,7 +6,7 @@ const fs = require("fs");
 const _ = require("underscore");
 
 fs.readFile("input.txt", "utf-8", (err, data) => {
-  console.log("Part 1: " + part1(data) + "\nPart 2: " + part2(data = JSON.parse(data)));
+  console.log("Part 1: " + part1(data) + "\nPart 2: " + part2(JSON.parse(data)));
 });
 
 function part1(data) {
