@@ -19,10 +19,10 @@ class HashFinder(object):
         while True:
             if (self.checkHash(self.returnHash(
                     self.key + str(number)), zeroes)):
-                print(number)
-                break
+                return number
             number += 1
 
 if __name__ == "__main__":
     hf = HashFinder()
-    hf.findNumber(5)
+    print("Part 1: {0}".format(hf.findNumber(5)))
+    print("Part 2: {0}".format(hf.findNumber(6)))
