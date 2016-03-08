@@ -41,7 +41,7 @@ class Turinglock(object):
     def solve(self):
         i = 0
         while (0 <= i < len(self.data)):
-            i = lock.process(self.data[i], i)
+            i = self.process(self.data[i], i)
         return self.registers["b"]
 
 if __name__ == "__main__":
