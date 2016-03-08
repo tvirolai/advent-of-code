@@ -10,8 +10,7 @@ class Turinglock(object):
 
     def readData(self, inputFile):
         with open(inputFile, "r") as f:
-            data = [x for x in f.read().split("\n") if len(x) > 1]
-        return data
+            return [x for x in f.read().split("\n") if len(x) > 1]
 
     def process(self, line, index):
         '''
