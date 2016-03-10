@@ -14,7 +14,7 @@ class Turinglock(object):
 
     def process(self, line, index):
         '''
-        The function processes an instruction, edits register and returns next index.
+        The method processes an instruction, edits register and returns next index.
         '''
         instruction = line[0:3]
         register = line[4:5] if line[4:5].isalpha() else False
