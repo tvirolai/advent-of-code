@@ -2,7 +2,7 @@
 
 "use strict";
 
-const _ = require("underscore");
+const _ = require("lodash");
 const limit = 33100000;
 
 console.log("Part 1: " + calculateResult(1));
