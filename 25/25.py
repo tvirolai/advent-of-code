@@ -1,19 +1,22 @@
 #!/bin/env python
 
-def valueByIndex(n):
-    value = 20151125
-    if n == 0:
-        return value
-    elif n == 1:
-        return value * 252533 % 33554393
-    else:
-        return valueByIndex(n-1) * 252533 % 33554393
 
-targetRow = 3010
-targetColumn = 3019
+def countValue(value):
+    return value * 252533 % 33554393
 
-print(valueByIndex(400))
 
 def findIndex(x, y):
-    pass
+    x = x + (y - 1)
+    return sum(range(0, x)) + y
 
+
+def findValue(x, y):
+    index = findIndex(x, y)
+    i = 1
+    value = 20151125
+    while i < index:
+        value = countValue(value)
+        i += 1
+    return value
+
+print(findValue(3010, 3019))
